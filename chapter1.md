@@ -395,6 +395,9 @@ lapply(df, sum)
 
 *** =sct
 ```{r}
+test_function("lapply", args= c("X","FUN"), not_called_msg = c("missing first pos arg","missing second pos arg"), incorrect_msg = c("incorrect first pos arg","incorrect second pos arg"))
+
+
 ```
 --- type:NormalExercise lang:r xp:100 skills:1 key:2564475b6e
 ## Logic Test
