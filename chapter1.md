@@ -73,10 +73,14 @@ library(zoo)
 x <- zoo(1:3)
 
 print(x)
+
 ```
 
 *** =sct
 ```{r}
+test_object("x", undefined_msg = "x is undefined", incorrect_msg = "x is not correct" )
+test_student_typed(c("print(x)","print(y)"), not_typed_msg = "Expected same output as `zoo(1:3)`")
+ 
 ```
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:86f183628a
@@ -137,7 +141,14 @@ f("b")
 
 *** =sct
 ```{r}
-# Use only a check_code SCT
+# Use only a check_code SCT  # I have never used check_code before, also, no actual check_code example in the wiki.
+
+
+test_student_typed(c("f('blue')",
+                     ""f( 'b' )",
+                     "f('b')","(f('b'))"),
+                   not_typed_msg = "should call f('blue') or f('b')")
+success_msg("Great job!")
 
 
 ```
