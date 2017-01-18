@@ -249,6 +249,10 @@ d$ttl <- d$x + d$y
 
 *** =sct
 ```{r}
+#test_object("d", undefined = "d is undefined", incorrect_msg = "bad value for ttl")
+
+test_data_frame("d", columns= "y", undefined_msg = "d is undefined", incorrect_msg = "bad value for ttl", undefined_cols_msg = "missing col y")
+
 ```
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:631d01c691
@@ -285,6 +289,8 @@ f <- function(a, b, c=1) a + b + c
 *** =pre_exercise_code
 ```{r}
 
+
+
 ```
 
 *** =sample_code
@@ -299,6 +305,13 @@ f <- function(a, b, c=1) sum(a + b, c)
 
 *** =sct
 ```{r}
+test_function_definition("f", function_test = {
+                           test_expression_result("f(1,2,3)")
+                         }, incorrect_number_arguments_msg = "missing 3rd argument",
+                         body_test = {
+                           test_output_contains("sum", incorrect_msg = "no sum call")
+                           test_output_contains("+", incorrect_msg = "no + operator")
+                         })
 ```
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:7839a0890c
@@ -333,6 +346,7 @@ lm(x ~ y, data=d)
 
 *** =sct
 ```{r}
+test_function("lm")   # :)
 ```
 
 
