@@ -448,6 +448,10 @@ x <- mean(1:3)
 
 *** =sct
 ```{r}
+test_error(incorrect_msg = "error in code") # don't know how to accept the weird code
+test_object("x", undefined_msg = "undefined x")
+test_function("mean", not_called_msg = "did you call mean?")
+
 ```
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:f02f67218b
